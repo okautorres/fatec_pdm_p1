@@ -17,10 +17,10 @@ const App = () => {
   }
 
   const calcularDados = (valorInicialRecebido, aporteRecebido, taxaJurosRecebido, periodoRecebido) => {
-    const valorInicial = parseFloat(valorInicialRecebido)
-    const aporte = parseFloat(aporteRecebido)
-    const taxaJuros = parseFloat(taxaJurosRecebido) / 100
-    const periodo = parseInt(periodoRecebido)
+    const valorInicial = Number(valorInicialRecebido)
+    const aporte = Number(aporteRecebido)
+    const taxaJuros = Number(taxaJurosRecebido) / 100
+    const periodo = Number(periodoRecebido)
 
     const valorFinalAcumuladoResultado = valorInicial * Math.pow(1 + taxaJuros, periodo) + aporte * ((Math.pow(1 + taxaJuros, periodo) - 1) / taxaJuros)
     const totalInvestidoResultado = valorInicial + (aporte*periodo)
@@ -42,7 +42,7 @@ const App = () => {
     <div className="container mt-5 d-flex flex-column">
       <div className="row">
         <div className="col-12">
-          <h1 style={{ marginBottom: 70 }}>Hello, investimentos</h1>
+          <h1 className="border-bottom" style={{ marginBottom: 50, color: "#0e6e54"}}>Hello, investimentos</h1>
         </div>
       </div>
       <div className="row">

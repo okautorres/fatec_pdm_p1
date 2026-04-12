@@ -15,10 +15,10 @@ const CapturaDados = (props) => {
 
   return (
     <div className="row">
-      <div className="col-6">
+      <div className="col-12 col-md-6">
         <label className="form-label">Valor Inicial (R$)</label>
         <input
-          type="text"
+          type="number"
           className="form-control"
           placeholder="00.00"
           value={valorInicial}
@@ -26,7 +26,7 @@ const CapturaDados = (props) => {
         />
         <label className="form-label mt-2">Taxa de Juros (% ao mês)</label>
         <input
-          type="text"
+          type="number"
           className="form-control"
           placeholder="0.00%"
           value={taxaJuros}
@@ -34,10 +34,10 @@ const CapturaDados = (props) => {
         />
       </div>
 
-      <div className="col-6">
+      <div className="col-12 col-md-6">
         <label className="form-label">Aporte Mensal (R$)</label>
         <input
-          type="text"
+          type="number"
           className="form-control"
           placeholder="00.00"
           value={aporte}
@@ -45,7 +45,7 @@ const CapturaDados = (props) => {
         />
         <label className="form-label mt-2">Período (meses)</label>
         <input
-          type="text"
+          type="number"
           className="form-control"
           placeholder="0"
           value={periodo}

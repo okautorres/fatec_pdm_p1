@@ -1,5 +1,3 @@
-import React from "react";
-import App from "./App";
 
 const ExibeDados = (props) => {
   return (
@@ -10,41 +8,41 @@ const ExibeDados = (props) => {
             <div className="card-body">
               <div className="row">
                 <div className="col-12">
-                  <h3 className="card-title">Valor final acumulado</h3>
+                  <h5 className="card-title" >Valor final acumulado</h5>
                   <h1
-                    className="card-title border-bottom pb-2 border-dark"
+                    className="card-title border-bottom pb-3 border-dark"
                     style={{ color: "#0e6e54" }}
                   >
-                    {props.valorFinalAcumulado}
+                    R$ {props.valorFinalAcumulado}
                   </h1>
                 </div>
               </div>
               <div className="row mt-4">
-                <div className="col-6">
+                <div className="col-12 col-md-6">
                   <h6 className="card-subtitle">Total investido</h6>
-                  <h5 className="card-text mt-1">{props.totalInvestido}</h5>
-                  <h6 className="card-subtitle mt-4">N de aportes</h6>
-                  <h5 className="card-text mt-1">{props.numeroAportes}</h5>
+                  <h4 className="card-text mt-1">R$ {props.totalInvestido}</h4>
+                  <h6 className="card-subtitle mt-4">Nº de aportes</h6>
+                  <h4 className="card-text mt-1">{props.numeroAportes}</h4>
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-md-6 mt-4 mt-md-0">
                   <h6 className="card-subtitle">Juros acumulados</h6>
-                  <h5 className="card-text mt-1">{props.jurosAcumulado}</h5>
-                  <h6 className="card-subtitle mt-4">Rentabilidade</h6>
-                  <h5 className="card-text mt-1" style={{ color: "#0e6e54" }}>
-                    {props.rentabilidade}
-                  </h5>
+                  <h4 className="card-text mt-1">R$ {props.jurosAcumulado}</h4>
+                  <h6 className="card-subtitle mt-4 mt-md-0">Rentabilidade</h6>
+                  <h4 className="card-text mt-1" style={{ color: "#0e6e54" }}>
+                    +{props.rentabilidade}%
+                  </h4>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="row mt-4">
+      <div className="row mt-5">
         <div className="col-6">
-          <h3>Histórico de simulações</h3>
+          <h5>Histórico de simulações</h5>
         </div>
         <div className="col-6 d-flex justify-content-end">
-          <h3>4 simulações</h3>
+          <h7>4 simulações</h7>
         </div>
       </div>
       <div className="row mt-2">
@@ -58,10 +56,10 @@ const ExibeDados = (props) => {
                 >
                   <div className="row">
                     <div className="col-6">
-                      <h5>Data</h5>
+                      <h7>Data</h7>
                     </div>
                     <div className="col-6 d-flex justify-content-end">
-                      <h5>Valor final</h5>
+                      <h7>Valor final</h7>
                     </div>
                   </div>
                 </div>
@@ -69,12 +67,12 @@ const ExibeDados = (props) => {
             </div>
             <div className="card-body">
               <div className="row">
-                <div className="col-6">
-                  <h6 className="card-text">11/04/2026</h6>
+                <div className="col-4">
+                  <h7 className="card-text">11/04/2026</h7>
                 </div>
-                <div className="col-6">
-                  <h6 className="card-text d-flex justify-content-end">
-                    R$10.000,00
+                <div className="col-8">
+                  <h6 className="card-text d-flex justify-content-end ">
+                    R$ 336.34931116526184
                   </h6>
                 </div>
               </div>
