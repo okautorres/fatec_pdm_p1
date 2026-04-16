@@ -11,6 +11,9 @@ const App = () => {
   const [jurosAcumulado, setJurosAcumulado] = useState(0)
   const [rentabilidade, setRentabilidade] = useState(0)
 
+  const [historico, setHistorico] = useState([])
+
+  const [contador, setContador] = useState(0)
 
   const recebeDados = (valorInicial, aporte, taxaJuros, periodo) => {
     calcularDados(valorInicial, aporte, taxaJuros, periodo)
@@ -34,8 +37,18 @@ const App = () => {
     setJurosAcumulado(jurosAcumuladoResultado)
     setRentabilidade(rentabilidadeResultado)
 
+    const resultadoFinal = {data: new Date().toLocaleString("pt-BR"), valor: valorFinalAcumuladoResultado}
+    setHistorico([...historico, resultadoFinal])
+    setContador(contador+1)
 
+  }
 
+  const limparResultados = () => {
+    setValorFinalAcumulado(0);
+    setTotalInvestido(0);
+    setNumeroAportes(0);
+    setJurosAcumulado(0);
+    setRentabilidade(0);
   }
 
   return (
@@ -53,7 +66,9 @@ const App = () => {
       </div>
       <div className="row">
         <div className="col-12">
-          <CapturaDados recebeDados = {recebeDados} ></CapturaDados>
+          <CapturaDados 
+          recebeDados = {recebeDados} 
+          limparResultados = {limparResultados}></CapturaDados>
         </div>
       </div>
       <div className="row mt-4">
@@ -64,6 +79,8 @@ const App = () => {
           numeroAportes = {numeroAportes}
           jurosAcumulado = {jurosAcumulado}
           rentabilidade = {rentabilidade}
+          historico = {historico}
+          contador = {contador}
           ></ExibeDados>
         </div>
       </div>

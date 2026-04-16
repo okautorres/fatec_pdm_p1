@@ -42,7 +42,7 @@ const ExibeDados = (props) => {
           <h5>Histórico de simulações</h5>
         </div>
         <div className="col-6 d-flex justify-content-end">
-          <h7>4 simulações</h7>
+          <h6 className="fw-normal">{props.contador} simulações</h6>
         </div>
       </div>
       <div className="row mt-2">
@@ -56,26 +56,28 @@ const ExibeDados = (props) => {
                 >
                   <div className="row">
                     <div className="col-6">
-                      <h7>Data</h7>
+                      <h6 className="fw-normal">Data</h6>
                     </div>
                     <div className="col-6 d-flex justify-content-end">
-                      <h7>Valor final</h7>
+                      <h6 className="fw-normal">Valor final</h6>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="card-body">
-              <div className="row">
-                <div className="col-4">
-                  <h7 className="card-text">11/04/2026</h7>
+            <div className="card-body pt-0">
+              {props.historico.map((item, index) => (
+              <div className="row border-bottom p-2">
+                <div className="col-12 col-md-4">
+                  <h6 className="card-text fw-normal">{item.data}</h6>
                 </div>
-                <div className="col-8">
+                <div className="col-12 col-md-8">
                   <h6 className="card-text d-flex justify-content-end ">
-                    R$ 336.34931116526184
+                    R$ {item.valor}
                   </h6>
                 </div>
               </div>
+              ))}
             </div>
           </div>
         </div>

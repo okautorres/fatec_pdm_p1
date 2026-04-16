@@ -11,6 +11,8 @@ const CapturaDados = (props) => {
     setAporte("");
     setTaxaJuros("");
     setPeriodo("");
+    
+    props.limparResultados()
   };
 
   return (
